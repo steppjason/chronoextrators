@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		UIManager.chronoResourceText.text = ResourceManager.chronoResource.ToString();
+		UIManager.depotResourceText.text =
+			ResourceManager.depotResourceUsed + "/" + ResourceManager.depotResource.ToString();
+		UIManager.refineryResourceText.text =
+			ResourceManager.refineryResourceUsed + "/" + ResourceManager.refineryResource.ToString();
 	}
 
 	void Update()

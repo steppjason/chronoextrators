@@ -9,6 +9,9 @@ public class ResourceManager : MonoBehaviour
 	public int depotResource = 0;
 	public int refineryResource = 0;
 
+	public int depotResourceUsed = 0;
+	public int refineryResourceUsed = 0;
+
 	public Button extractorButton;
 	public Button depotButton;
 	public Button barracksButton;
@@ -23,41 +26,4 @@ public class ResourceManager : MonoBehaviour
 	public Structure refineryStructure;
 	public Structure towerStructure;
 
-	void Update()
-	{
-		UpdateButtons();
-	}
-
-	void UpdateButtons()
-	{
-		if (chronoResource < extractorStructure.resourceCost)
-			extractorButton.interactable = false;
-		else
-			extractorButton.interactable = true;
-
-		if (chronoResource < depotStructure.resourceCost)
-			depotButton.interactable = false;
-		else
-			depotButton.interactable = true;
-
-		if (chronoResource < barracksStructure.resourceCost)
-			barracksButton.interactable = false;
-		else
-			barracksButton.interactable = true;
-
-		if (chronoResource < factoryStructure.resourceCost)
-			factoryButton.interactable = false;
-		else
-			factoryButton.interactable = true;
-
-		if (chronoResource < refineryStructure.resourceCost)
-			refineryButton.interactable = false;
-		else
-			refineryButton.interactable = true;
-
-		if (chronoResource < towerStructure.resourceCost)
-			towerButton.interactable = false;
-		else
-			towerButton.interactable = true;
-	}
 }
