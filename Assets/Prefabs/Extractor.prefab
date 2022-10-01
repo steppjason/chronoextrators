@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8846742640483547526}
+  - component: {fileID: 5671739865309173790}
   - component: {fileID: 8846742640483547527}
   - component: {fileID: 8846742640483547524}
   - component: {fileID: 8846742640483547521}
   - component: {fileID: 8846742640483547520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Extractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5671739865309173790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8846742640483547525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545b91311799bb44ba103fe68437c179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceCost: 25
 --- !u!114 &8846742640483547527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd876b83a20d29a4b9a9119ecd9d7319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RESOURCE_INCREASE: 10
+  resourceIncrease: 5
 --- !u!212 &8846742640483547524
 SpriteRenderer:
   m_ObjectHideFlags: 0

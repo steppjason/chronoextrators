@@ -6,7 +6,7 @@ public class Extractor : MonoBehaviour
 {
 	private float time;
 
-	public int RESOURCE_INCREASE = 10;
+	public int resourceIncrease = 10;
 
 	private void Start()
 	{
@@ -18,7 +18,7 @@ public class Extractor : MonoBehaviour
 		time += Time.deltaTime;
 		if (time > 10)
 		{
-			GameManager.Instance.ResourceManager.chronoResource += RESOURCE_INCREASE;
+			GameManager.Instance.ResourceManager.chronoResource += resourceIncrease;
 			GameManager.Instance.UIManager.chronoResourceText.text = GameManager.Instance.ResourceManager.chronoResource.ToString();
 			time = 0;
 		}

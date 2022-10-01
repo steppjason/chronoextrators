@@ -229,9 +229,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee02caae532ff149b2ecc7037d0f092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chronoResource: 0
+  chronoResource: 25
   depotResource: 0
   refineryResource: 0
+  extractorButton: {fileID: 644926542}
+  depotButton: {fileID: 397872157}
+  barracksButton: {fileID: 489438957}
+  factoryButton: {fileID: 1843160260}
+  refineryButton: {fileID: 563219591}
+  towerButton: {fileID: 508725367}
+  extractorStructure: {fileID: 5671739865309173790, guid: 1fa3e3f559f4ce94ba038a3013298f8a, type: 3}
+  depotStructure: {fileID: 5448002033405622358, guid: bbfe5b81f6d8f6b4e877df36182d0f11, type: 3}
+  barracksStructure: {fileID: 4594997707886184145, guid: 286935c365c48c24ba6106f56d28ee87, type: 3}
+  factoryStructure: {fileID: 7479824841687931012, guid: 4bd5e21867b97d04a9ee4b2ed17e19d8, type: 3}
+  refineryStructure: {fileID: 6535962984694057167, guid: c966d83414561b547bc7a99bcc6637ce, type: 3}
+  towerStructure: {fileID: 747748033076459364, guid: be93ea2594efcbd4d874a299c4455b53, type: 3}
 --- !u!114 &83119699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +272,7 @@ GameObject:
   - component: {fileID: 341312180}
   - component: {fileID: 341312183}
   - component: {fileID: 341312182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +344,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &341312182
 Rigidbody2D:
@@ -440,7 +452,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -452,8 +464,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 922737521, guid: 1b5eedb783324df4a9eff752ea697f61, type: 3}
+    m_DisabledSprite: {fileID: -909475941, guid: 1b5eedb783324df4a9eff752ea697f61, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -464,7 +476,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 397872158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1690387596}
+        m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
+        m_MethodName: ChangeSelection
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1815825685450065639, guid: bbfe5b81f6d8f6b4e877df36182d0f11, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &397872158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1b5eedb783324df4a9eff752ea697f61, type: 3}
+  m_Sprite: {fileID: 1147860664, guid: 1b5eedb783324df4a9eff752ea697f61, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -522,7 +546,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -538,7 +562,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -577,7 +601,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484298365
 GameObject:
@@ -722,7 +746,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -734,8 +758,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -1657080057, guid: 67339ec7fda01b240a0d68078743a5b4, type: 3}
+    m_DisabledSprite: {fileID: 238787785, guid: 67339ec7fda01b240a0d68078743a5b4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -779,7 +803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67339ec7fda01b240a0d68078743a5b4, type: 3}
+  m_Sprite: {fileID: 61371722, guid: 67339ec7fda01b240a0d68078743a5b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -816,7 +840,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -832,7 +856,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1036,7 +1060,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1048,8 +1072,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 438036169, guid: 5307bd13a9c53334cbe76445a0e6874f, type: 3}
+    m_DisabledSprite: {fileID: -262911003, guid: 5307bd13a9c53334cbe76445a0e6874f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1060,7 +1084,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 508725368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1690387596}
+        m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
+        m_MethodName: ChangeSelection
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6043476695524459938, guid: be93ea2594efcbd4d874a299c4455b53, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &508725368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,7 +1117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5307bd13a9c53334cbe76445a0e6874f, type: 3}
+  m_Sprite: {fileID: 700424905, guid: 5307bd13a9c53334cbe76445a0e6874f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1118,7 +1154,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1134,7 +1170,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1203,7 +1239,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1215,8 +1251,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -64760694, guid: 4b93e573edaa1734c8069886b8f41fee, type: 3}
+    m_DisabledSprite: {fileID: 2132658111, guid: 4b93e573edaa1734c8069886b8f41fee, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1227,7 +1263,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 563219592}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1690387596}
+        m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
+        m_MethodName: ChangeSelection
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6900351683958445519, guid: c966d83414561b547bc7a99bcc6637ce, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563219592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b93e573edaa1734c8069886b8f41fee, type: 3}
+  m_Sprite: {fileID: -1235864214, guid: 4b93e573edaa1734c8069886b8f41fee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1285,7 +1333,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1301,7 +1349,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1370,20 +1418,20 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.7490196}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -676292056, guid: 1490735bef6f8244ea1b80eb113e1a1a, type: 3}
+    m_DisabledSprite: {fileID: -628772974, guid: 1490735bef6f8244ea1b80eb113e1a1a, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1427,7 +1475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1490735bef6f8244ea1b80eb113e1a1a, type: 3}
+  m_Sprite: {fileID: 627476088, guid: 1490735bef6f8244ea1b80eb113e1a1a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1464,7 +1512,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1480,7 +1528,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1503,8 +1551,8 @@ GameObject:
   - component: {fileID: 690423466}
   - component: {fileID: 690423465}
   - component: {fileID: 690423464}
-  m_Layer: 0
-  m_Name: Detector
+  m_Layer: 7
+  m_Name: Adjacent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1676,7 +1724,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823644211
 GameObject:
@@ -1959,7 +2007,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1975,7 +2023,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2083,13 +2131,107 @@ RectTransform:
   - {fileID: 2136783924}
   - {fileID: 1383785400}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1343189335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343189336}
+  - component: {fileID: 1343189339}
+  - component: {fileID: 1343189338}
+  - component: {fileID: 1343189337}
+  m_Layer: 6
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1343189336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343189335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690387597}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1343189337
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343189335}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1343189338
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343189335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0038375854, y: 0.009594023}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.25}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.86184645, y: 0.86568415}
+  m_EdgeRadius: 0
+--- !u!114 &1343189339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343189335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1fdfa19fc5df14f95917ecd4d8797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPlacer: {fileID: 1690387596}
 --- !u!1 &1383785399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,8 +2409,6 @@ GameObject:
   - component: {fileID: 1690387597}
   - component: {fileID: 1690387596}
   - component: {fileID: 1690387595}
-  - component: {fileID: 1690387598}
-  - component: {fileID: 1690387599}
   m_Layer: 0
   m_Name: GridPlacer
   m_TagString: Untagged
@@ -2341,8 +2481,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliding: 0
+  adjacent: 0
   tilemap: {fileID: 1720429602}
-  currentSelection: {fileID: 0}
+  currentSelection: {fileID: 8846742640483547525, guid: 1fa3e3f559f4ce94ba038a3013298f8a, type: 3}
 --- !u!4 &1690387597
 Transform:
   m_ObjectHideFlags: 0
@@ -2356,56 +2497,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 690423463}
+  - {fileID: 1343189336}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1690387598
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690387594}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0038375854, y: 0.009594023}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.25}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86184645, y: 0.86568415}
-  m_EdgeRadius: 0
---- !u!50 &1690387599
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690387594}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1720429599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2664,7 @@ Transform:
   m_Children:
   - {fileID: 1720429600}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843160258
 GameObject:
@@ -2630,7 +2725,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2642,8 +2737,8 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 1829019948, guid: 357458f75190bdd4c82da08cdf62fc02, type: 3}
+    m_DisabledSprite: {fileID: 471306578, guid: 357458f75190bdd4c82da08cdf62fc02, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2654,7 +2749,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1843160261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1690387596}
+        m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
+        m_MethodName: ChangeSelection
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5536236758932731459, guid: 4bd5e21867b97d04a9ee4b2ed17e19d8, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1843160261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2675,7 +2782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 357458f75190bdd4c82da08cdf62fc02, type: 3}
+  m_Sprite: {fileID: 1498611790, guid: 357458f75190bdd4c82da08cdf62fc02, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2712,7 +2819,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: DisableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2728,7 +2835,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1690387596}
           m_TargetAssemblyTypeName: GridPlacer, Assembly-CSharp
-          m_MethodName: ToggleCursor
+          m_MethodName: EnableCursor
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

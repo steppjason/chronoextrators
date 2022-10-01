@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridDetector : MonoBehaviour
+public class Adjacent : MonoBehaviour
 {
 	public GridPlacer gridPlacer;
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
-		gridPlacer.colliding = false;
+		gridPlacer.adjacent = true;
 	}
 
 	void OnTriggerExit2D(Collider2D other)
 	{
-		gridPlacer.colliding = true;
+		gridPlacer.adjacent = false;
 	}
 }
