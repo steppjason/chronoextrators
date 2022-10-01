@@ -5,14 +5,11 @@ using UnityEngine;
 public class ChronoNautRange : MonoBehaviour 
 {
 	public ChronoNaut chronoNaut;
-	
-	void Start() 
-	{
-		
-	}
+	public List<Collider2D> enemyColliders = new List<Collider2D>();
 
-	void Update() 
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		
+		if (other.gameObject.tag == "Enemy")
+			enemyColliders.Add(other);
 	}
 }

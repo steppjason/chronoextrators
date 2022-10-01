@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Chrononaut
   - Enemy
+  - Unit
+  - Structure
+  - Chrononaut
+  - Mech
   layers:
   - Default
   - TransparentFX
@@ -16,10 +19,10 @@ TagManager:
   - GridPlacerCollider
   - GridPlacerAdjacent
   - Structure
-  - 
-  - 
-  - 
-  - 
+  - Chrononaut
+  - ChrononautRange
+  - Enemy
+  - EnemyRange
   - 
   - 
   - 

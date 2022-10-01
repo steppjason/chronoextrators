@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class GroundTower : MonoBehaviour 
 {
-	void Start() 
+	public Structure structure;
+
+	void Start()
 	{
-		
+		structure = GetComponent<Structure>();
 	}
 
-	void Update() 
+	void Update()
 	{
-		
+		if (structure.health <= 0)
+		{
+			Destroy();
+		}
+	}
+
+	void Destroy()
+	{
+		structure.Die();
 	}
 }

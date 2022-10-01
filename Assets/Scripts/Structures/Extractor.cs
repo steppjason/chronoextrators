@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Extractor : MonoBehaviour
 {
+	public Structure structure;
 	private float time;
 
 	public int resourceIncrease = 10;
@@ -11,6 +12,7 @@ public class Extractor : MonoBehaviour
 	private void Start()
 	{
 		time = GameManager.Instance.time;
+		structure = GetComponent<Structure>();
 	}
 
 	void Update()
@@ -22,5 +24,15 @@ public class Extractor : MonoBehaviour
 			GameManager.Instance.UIManager.chronoResourceText.text = GameManager.Instance.ResourceManager.chronoResource.ToString();
 			time = 0;
 		}
+
+		if (structure.health <= 0)
+		{
+			Destroy();
+		}
+	}
+
+	void Destroy()
+	{
+		structure.Die();
 	}
 }

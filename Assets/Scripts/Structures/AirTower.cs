@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirTower : MonoBehaviour 
+public class AirTower : MonoBehaviour
 {
-	void Start() 
+	public Structure structure;
+
+	void Start()
 	{
-		
+		structure = GetComponent<Structure>();
 	}
 
-	void Update() 
+	void Update()
 	{
-		
+		if (structure.health <= 0)
+		{
+			Destroy();
+		}
+	}
+
+	void Destroy()
+	{
+		structure.Die();
 	}
 }
