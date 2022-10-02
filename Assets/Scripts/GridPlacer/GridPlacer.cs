@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 
 public class GridPlacer : MonoBehaviour
@@ -13,22 +14,27 @@ public class GridPlacer : MonoBehaviour
 	public bool adjacent;
 	public Tilemap tilemap;
 	public GameObject currentSelection;
+	public CardButton currentButtonSelection;
 
 	void Start()
 	{
 		_sprite = GetComponent<SpriteRenderer>();
+		currentSelection = null;
+		currentButtonSelection = null;
 	}
 
 	void Update()
 	{
 		DisplayCursor();
 		PlaceStructure();
-		ChangeColor();
+
+		if (currentSelection != null)
+			ChangeColor();
 	}
 
 	void PlaceStructure()
 	{
-		if (Input.GetMouseButtonDown(0) && isEnabled)
+		if (Input.GetMouseButtonDown(0) && isEnabled && currentSelection != null)
 		{
 			int resource = GameManager.Instance.ResourceManager.chronoResource;
 			int resourceCost = currentSelection.GetComponent<Structure>().resourceCost;
@@ -39,11 +45,17 @@ public class GridPlacer : MonoBehaviour
 				Debug.Log("INSUFFICIENT RESOURCES ERROR");
 			else if (!adjacent)
 				Debug.Log("NOT ADJACENT");
+			else if (currentSelection == null)
+				Debug.Log("NO SELECTION");
 			else
 			{
 				GameManager.Instance.ResourceManager.chronoResource -= currentSelection.GetComponent<Structure>().resourceCost;
 				GameManager.Instance.UIManager.chronoResourceText.text = GameManager.Instance.ResourceManager.chronoResource.ToString();
 				Instantiate(currentSelection, gameObject.transform.position, Quaternion.identity);
+				currentSelection = null;
+				currentButtonSelection.UseCharge();
+				currentButtonSelection = null;
+				_sprite.sprite = null;
 			}
 		}
 	}
@@ -75,6 +87,11 @@ public class GridPlacer : MonoBehaviour
 	{
 		currentSelection = nextSelection;
 		_sprite.sprite = currentSelection.GetComponent<SpriteRenderer>().sprite;
+	}
+
+	public void ChangeButton(CardButton buttonSelection)
+	{
+		currentButtonSelection = buttonSelection;
 	}
 
 	public void DisableCursor()

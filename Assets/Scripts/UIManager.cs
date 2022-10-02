@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
 
 	void Update()
 	{
-		UpdateButtons();
+		//UpdateButtons();
 	}
 
 	void UpdateButtons()

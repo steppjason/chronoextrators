@@ -170,14 +170,12 @@ public class ChronoNaut : MonoBehaviour
 
 		if (factory != null)
 		{
-			GameManager.Instance.ResourceManager.refineryResourceUsed--;
-			GameManager.Instance.UIManager.refineryResourceText.text =
-				GameManager.Instance.ResourceManager.refineryResourceUsed + "/" + GameManager.Instance.ResourceManager.refineryResource.ToString();
 			factory.qty--;
 			factory.capacity.text = factory.qty.ToString() + "/" + factory.maxLimit.ToString();
 		}
 
 		gameObject.SetActive(false);
+		Destroy(gameObject);
 	}
 
 	IEnumerator coFlashWhite()

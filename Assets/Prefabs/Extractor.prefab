@@ -312,9 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545b91311799bb44ba103fe68437c179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCost: 25
-  health: 50
-  maxHealth: 10
+  resourceCost: 35
+  health: 100
+  maxHealth: 100
   healthBar: {fileID: 2325018592547521844}
 --- !u!114 &8846742640483547527
 MonoBehaviour:

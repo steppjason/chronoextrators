@@ -64,8 +64,8 @@ public class GameManager : MonoBehaviour
 		if (time > 10)
 		{
 			SpawnGroundEnemies();
-			enemyIncrease += 0.7f;
-			enemiesPerWave = Mathf.RoundToInt(Mathf.Pow(1.25f, enemyIncrease));
+			enemyIncrease += 0.75f;
+			enemiesPerWave = Mathf.RoundToInt(Mathf.Pow(10f, enemyIncrease));
 			time = 0;
 		}
 	}

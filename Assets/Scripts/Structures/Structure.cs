@@ -37,5 +37,6 @@ public class Structure : MonoBehaviour
 	public void Die()
 	{
 		gameObject.SetActive(false);
+		Destroy(gameObject);
 	}
 }

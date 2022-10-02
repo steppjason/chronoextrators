@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 		if (!_isDead)
 		{
 			CheckTarget();
-			if(moving)
+			if(moving && _target != null)
 				Move();
 		}
 
@@ -88,7 +88,10 @@ public class Enemy : MonoBehaviour
 		}
 		else
 		{
-			_target = core;
+			if(core != null)
+				_target = core;
+			else
+				_target = null;
 		}
 
 	}
