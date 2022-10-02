@@ -243,7 +243,7 @@ MonoBehaviour:
   spawnPoint: {x: 0, y: 0, z: 0}
   wanderRadius: 0.1
   moveSpeed: 0.2
-  attackDamage: 3
+  attackDamage: 1
   fireRate: 0.5
   flashDuration: 0.05
   barracks: {fileID: 0}

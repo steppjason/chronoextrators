@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 		{
 			SpawnGroundEnemies();
 			enemyIncrease += 0.75f;
-			enemiesPerWave = Mathf.RoundToInt(Mathf.Pow(10f, enemyIncrease));
+			enemiesPerWave = Mathf.RoundToInt(Mathf.Pow(1.1f, enemyIncrease));
 			time = 0;
 		}
 	}
