@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour 
+public class AudioManager : MonoBehaviour
 {
-	void Start() 
-	{
-		
-	}
+	public AudioSource gunFire;
 
-	void Update() 
+	public void PlayGunFire(AudioClip audioClip)
 	{
-		
+		if(!gunFire.isPlaying)
+			gunFire.PlayOneShot(audioClip);
 	}
 }

@@ -248,6 +248,7 @@ MonoBehaviour:
   flashDuration: 0.05
   barracks: {fileID: 0}
   factory: {fileID: 0}
+  gunFire: {fileID: 8300000, guid: 4e29b19ede54fc64392c8a730c495b4c, type: 3}
   targetPos: {x: 0, y: 0, z: 0}
   hasTarget: 0
   shooting: 0

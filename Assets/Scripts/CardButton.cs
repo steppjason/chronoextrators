@@ -14,6 +14,8 @@ public class CardButton : MonoBehaviour
 	Image cardImage;
 	public Button button;
 	public Structure structure;
+	public GameObject panel;
+
 
 
 	private void Start()
@@ -36,7 +38,7 @@ public class CardButton : MonoBehaviour
 			}
 		}
 
-		if(structure.resourceCost > GameManager.Instance.ResourceManager.chronoResource || fillAmount < 1)
+		if (structure.resourceCost > GameManager.Instance.ResourceManager.chronoResource || fillAmount < 1)
 			button.interactable = false;
 		else
 			button.interactable = true;
@@ -50,5 +52,15 @@ public class CardButton : MonoBehaviour
 		isUsed = true;
 		fillAmount = 0;
 		time = 0;
+	}
+
+	public void ShowPanel()
+	{
+		panel.SetActive(true);
+	}
+
+	public void HidePanel()
+	{
+		panel.SetActive(false);
 	}
 }

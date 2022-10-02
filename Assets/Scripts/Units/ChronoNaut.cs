@@ -19,6 +19,8 @@ public class ChronoNaut : MonoBehaviour
 	public Barracks barracks;
 	public Factory factory;
 
+	public AudioClip gunFire;
+
 	[Space(50)]
 	public Vector3 targetPos;
 	public bool hasTarget = false;
@@ -125,6 +127,7 @@ public class ChronoNaut : MonoBehaviour
 			if (_weaponFireElapsedTime > fireRate)
 			{
 				_weaponFireElapsedTime = 0;
+				GameManager.Instance.AudioManager.PlayGunFire(gunFire);
 				_target.transform.parent.GetComponent<Enemy>().DealDamage(attackDamage);
 			}
 		}
