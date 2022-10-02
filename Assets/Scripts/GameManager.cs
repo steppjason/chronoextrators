@@ -64,10 +64,8 @@ public class GameManager : MonoBehaviour
 		if (time > 10)
 		{
 			SpawnGroundEnemies();
-			enemyIncrease += 0.75f;
-			Debug.Log(Mathf.Pow(1.1f, enemyIncrease));
-			enemiesPerWave = Mathf.RoundToInt(Mathf.Pow(1.1f, enemyIncrease));
-			Debug.Log(enemiesPerWave);
+			enemyIncrease += 0.7f;
+			enemiesPerWave = Mathf.RoundToInt(Mathf.Pow(1.25f, enemyIncrease));
 			time = 0;
 		}
 	}
@@ -94,6 +92,7 @@ public class GameManager : MonoBehaviour
 				GameObject newEnemy = _groundEnemies[_nextGroundEnemy];
 				newEnemy.transform.position = GetRandomPoint();
 				newEnemy.SetActive(true);
+				newEnemy.GetComponent<Enemy>()._isDead = false;
 			}
 		}
 	}

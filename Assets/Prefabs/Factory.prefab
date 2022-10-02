@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545b91311799bb44ba103fe68437c179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCost: 100
+  resourceCost: 500
   health: 10
   maxHealth: 10
   healthBar: {fileID: 5629857824320226812}
@@ -242,6 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5ed62b6359cbc408aa3eefd9a4b836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  capacity: {fileID: 0}
+  structure: {fileID: 0}
+  qty: 0
+  maxLimit: 0
 --- !u!212 &6594135380732577661
 SpriteRenderer:
   m_ObjectHideFlags: 0

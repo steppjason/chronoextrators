@@ -22,11 +22,11 @@ public class Structure : MonoBehaviour
 		healthBar.fillAmount = health / maxHealth;
 
 		if (healthBar.fillAmount <= 0.7f && healthBar.fillAmount >= 0.3f)
-			healthBar.color = new Color(1, 1, 0, 1);
+			healthBar.color = new Color(1, 1, 0, 0.5f);
 		else if (healthBar.fillAmount < 0.3f)
-			healthBar.color = new Color(1, 0, 0, 1);
+			healthBar.color = new Color(1, 0, 0, 0.5f);
 		else
-			healthBar.color = new Color(0, 1, 0, 1);
+			healthBar.color = new Color(0, 1, 0, 0.5f);
 	}
 
 	public void TakeDamage(int damage)

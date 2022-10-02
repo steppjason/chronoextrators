@@ -17,6 +17,7 @@ public class ChronoNaut : MonoBehaviour
 	public float flashDuration = 0.05f;
 
 	public Barracks barracks;
+	public Factory factory;
 
 	[Space(50)]
 	public Vector3 targetPos;
@@ -93,6 +94,12 @@ public class ChronoNaut : MonoBehaviour
 			{
 				Vector3 direction = spawnPoint - targetPos;
 				direction.Normalize();
+
+				if (direction.x > 0)
+					sprite.flipX = true;
+				else
+					sprite.flipX = false;
+
 				transform.position = transform.position + direction.normalized * moveSpeed * Time.deltaTime;
 			}
 		}
@@ -122,7 +129,10 @@ public class ChronoNaut : MonoBehaviour
 			}
 		}
 		else
+		{
+			_target = null;
 			shooting = false;
+		}
 	}
 
 	void ChangeEnemy()
@@ -148,8 +158,25 @@ public class ChronoNaut : MonoBehaviour
 
 	void Die()
 	{
-		if(barracks != null)
+
+		if (barracks != null)
+		{
+			GameManager.Instance.ResourceManager.depotResourceUsed--;
+			GameManager.Instance.UIManager.depotResourceText.text =
+				GameManager.Instance.ResourceManager.depotResourceUsed + "/" + GameManager.Instance.ResourceManager.depotResource.ToString();
 			barracks.qty--;
+			barracks.capacity.text = barracks.qty.ToString() + "/" + barracks.maxLimit.ToString();
+		}
+
+		if (factory != null)
+		{
+			GameManager.Instance.ResourceManager.refineryResourceUsed--;
+			GameManager.Instance.UIManager.refineryResourceText.text =
+				GameManager.Instance.ResourceManager.refineryResourceUsed + "/" + GameManager.Instance.ResourceManager.refineryResource.ToString();
+			factory.qty--;
+			factory.capacity.text = factory.qty.ToString() + "/" + factory.maxLimit.ToString();
+		}
+
 		gameObject.SetActive(false);
 	}
 

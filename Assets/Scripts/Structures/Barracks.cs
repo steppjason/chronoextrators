@@ -16,6 +16,7 @@ public class Barracks : MonoBehaviour
 
 	private void Start()
 	{
+		structure = GetComponent<Structure>();
 		time = GameManager.Instance.time;
 		capacity.text = qty.ToString() + "/" + maxLimit.ToString();
 	}

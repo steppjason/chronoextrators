@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 	public GameObject _target;
 	Animator animator;
 
-	bool _isDead = false;
+	public bool _isDead = false;
 
 	Shader _whiteFlash;
 	Shader _defaultShader;
@@ -97,6 +97,11 @@ public class Enemy : MonoBehaviour
 	{
 		animator.SetBool("Moving", true);
 		Vector3 direction = (_target.transform.position - transform.position).normalized;
+		if(direction.x > 0)
+			sprite.flipX = false;
+		else
+			sprite.flipX = true;
+
 		transform.position = transform.position + direction * moveSpeed * Time.deltaTime;
 	}
 

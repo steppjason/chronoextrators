@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 9
   spritePivot: {x: 0.5, y: 0}
@@ -133,10 +133,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 9
+        height: 10
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.66, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,12 +152,12 @@ TextureImporter:
       name: Chrononaut_1
       rect:
         serializedVersion: 2
-        x: 8
+        x: 9
         y: 0
-        width: 8
-        height: 8
+        width: 9
+        height: 10
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.66, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,6 +165,69 @@ TextureImporter:
       bones: []
       spriteID: d9b5691b8ba18414c8ab0b82bdf36972
       internalID: 546045846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chrononaut_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.66, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210fff36bdd06b7439078fd396dd0c27
+      internalID: -1694276865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chrononaut_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.66, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5b880284bc50d4789be3e7f36843e8
+      internalID: -1930459600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chrononaut_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 9
+        height: 10
+      alignment: 9
+      pivot: {x: 0.66, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503f27388a0887848a15d7185615c897
+      internalID: -1175291972
       vertices: []
       indices: 
       edges: []
@@ -181,7 +244,10 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Chrononaut_1: 546045846
+      Chrononaut_2: -1694276865
       Chrononaut_0: 693027514
+      Chrononaut_3: -1930459600
+      Chrononaut_4: -1175291972
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
